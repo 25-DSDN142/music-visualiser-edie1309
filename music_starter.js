@@ -2,7 +2,8 @@
 ///vocal, drum, bass, and other are volumes ranging from 0 to 100
 
 var moonSize = 55
-var colorwindow = (45,85,95)
+var hueWindow = (40) //45,85,95
+var windowSize = (25, 25)
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSB);
@@ -18,17 +19,31 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 //the expanding moon 
   moonSize = map(drum,0,100,100,150)
   
-  stroke(0)
-  fill(40,50,95)
+
+  fill(40,40,95,100)
   ellipse(370,150, moonSize)
   
   for(let i=0; i < 7; i++){
    ellipse(370,150, moonSize+(i*15))
+
+
+   }
    
+   hueWindow = map(bass,0,100,5,300)
+
+
+
+  // noStroke();
+   //for(let i=0; i<5;i++){
+
+     // fill(200,90,100,80-i*15);
+     // rect(235, 850, windowSize)//left
+     // rect(305, 850, windowSize)//right window
+   
+
 }
 
 
-}
 
 //ai drew house shape i did colour and grass plus other things on house
 function drawHouse(x, y) {
@@ -55,7 +70,7 @@ noStroke()
   rect(x, y + 15, 30, 50);
 
   // windows
-  fill(225, 95, 0);
+  fill(40, hueWindow , 80);
   rect(x - 35, y - 10, 25, 25);
   rect(x + 35, y -10, 25, 25);
 //grass
