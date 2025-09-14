@@ -44,9 +44,13 @@ noStroke()
 //grass
   fill (95,95,20)
   rect(x, y+35,600,10)
+  let other =map(other, x - 35, y - 10, 25, 25);
+  let colorwindow = (45,85,95)
 
- 
 }
+// need to make smoke from chimney and light in windowns 
+//cute moon in sky also 
+//and sort lyrics?
 
 
   
