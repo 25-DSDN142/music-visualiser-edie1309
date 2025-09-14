@@ -3,7 +3,8 @@
 
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-   background(34, 16, 64);
+  colorMode(HSB);
+   background(265,95,45);
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -12,27 +13,33 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 }
 
-
+//ai drew house shape
 function drawHouse(x, y) {
   rectMode(CENTER);
 noStroke()
-  // base of house
-  fill(220, 180, 140);
+  
+//grass
+  fill (95,95,20)
+  rect(x, y+45,600,140)
+// base of house
+  fill(35, 30, 85);
   rect(x, y, 120, 80);
 
   // roof
-  fill(150, 50, 50);
+  fill(10, 75, 55);
   triangle(x - 70, y - 40, x + 70, y - 40, x, y - 100);
 
   // door
-  fill(100, 70, 50);
-  rect(x, y + 20, 30, 50);
+  fill(10, 75, 55);
+  rect(x, y + 15, 30, 50);
 
-  // window
-  fill(180, 220, 250);
+  // windows
+  fill(225, 95, 0);
   rect(x - 35, y - 10, 25, 25);
-  
-
+  rect(x + 35, y -10, 25, 25);
+//grass
+  fill (95,95,20)
+  rect(x, y+35,600,10)
 }
 
 
