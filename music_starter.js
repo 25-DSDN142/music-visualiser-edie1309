@@ -3,7 +3,7 @@
 
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-   background(255, 0, 199);
+   background(34, 16, 64);
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -15,7 +15,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 function drawHouse(x, y) {
   rectMode(CENTER);
-
+noStroke()
   // base of house
   fill(220, 180, 140);
   rect(x, y, 120, 80);
@@ -31,6 +31,8 @@ function drawHouse(x, y) {
   // window
   fill(180, 220, 250);
   rect(x - 35, y - 10, 25, 25);
+  
+
 }
 
 
