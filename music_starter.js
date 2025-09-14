@@ -4,6 +4,7 @@
 var moonSize = 55
 var hueWindow = (40) //45,85,95
 var windowSize = (25, 25)
+drops = []
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSB);
@@ -11,11 +12,32 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
+ 
+    for (let i = 0; i < 5; i++){
+    drops.push(new Drop(random(width), 0, 0))
+  }
   
+  for (let d of drops){
+    d.show()
+    d.update()
+  }
+
+}
+
+class Drop{
+  constructor(x, y){
+    this.pos = createVector(x, y)
+    this.vel = createVector(0, random(8, 11))
+    this.length = random(20, 40)
+    this.strength = random(255)
+  }
+  show(){
+    stroke(255, this.strength)
+    line(this.pos.x, this.pos.y, this.pos.x, this.pos.y-this.length)
+
   drawHouse (width / 2, height - 100)
   
   
-
 //the expanding moon 
   moonSize = map(drum,0,100,100,150)
   
@@ -29,19 +51,20 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
    }
    
-   hueWindow = map(bass,0,100,5,300)
+   hueWindow = map(bass,0,100,5,300)//changes light in windows 
 
+   ///noStroke();
+   fill(0,0,100,90)
 
-
-  // noStroke();
-   //for(let i=0; i<5;i++){
-
-     // fill(200,90,100,80-i*15);
-     // rect(235, 850, windowSize)//left
-     // rect(305, 850, windowSize)//right window
+   drawSmoke(200,200,60)
    
 
 }
+
+
+   
+
+
 
 
 
@@ -77,33 +100,23 @@ noStroke()
   fill (95,95,20)
   rect(x, y+35,600,10)
 }
-  
-  //window colour chnaging
-//let otherMap =map(other, x - 35, y - 10, 25, 25);
-  
-
-  //expanding moon
-  //let
-  
-//function expandingMoon(){
-  
-  //moonsize = map(vocal,0,100,100,600)
-  
-//  ellipse(50,100, moonsize)
-  //fill(40,40,95)
-
-  
-// for (let i = 1; i < 5; i++){
-
-   //ellipse(100, 50,moonsize=(100*i))
 
 
-  ////}
 
-//}
-// need to make smoke from chimney and light in windowns 
-//cute moon in sky also 
-//and sort lyrics?
+
+function drawSmoke(){
+
+noStroke();
+   fill(0,0,90,50)
+   ellipse(200, 200, 260, 60);
+  ellipse(230, 210, 230, 50);
+  ellipse(170, 210, 230, 50);
+  ellipse(200, 220, 400, 40);
+  
+}
+
+
+// need to make smoke from chimney 
 
 
   
