@@ -4,7 +4,7 @@
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSB);
-   background(265,95,45);
+   background(225,95,35);
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
@@ -13,7 +13,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 }
 
-//ai drew house shape
+//ai drew house shape i did colour and grass plus other things on house
 function drawHouse(x, y) {
   rectMode(CENTER);
 noStroke()
@@ -24,6 +24,10 @@ noStroke()
 // base of house
   fill(35, 30, 85);
   rect(x, y, 120, 80);
+
+  //chimney
+ fill (10, 75, 35)
+  rect(x-35,y-90, 35,65)
 
   // roof
   fill(10, 75, 55);
@@ -40,6 +44,8 @@ noStroke()
 //grass
   fill (95,95,20)
   rect(x, y+35,600,10)
+
+ 
 }
 
 
