@@ -1,15 +1,32 @@
 
 ///vocal, drum, bass, and other are volumes ranging from 0 to 100
 
+var moonSize = 55
+var colorwindow = (45,85,95)
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   colorMode(HSB);
-   background(225,95,35);
+  background(225,95,35);
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
   textSize(24);
   
   drawHouse (width / 2, height - 100)
+  
+  
+
+//the expanding moon 
+  moonSize = map(drum,0,100,100,150)
+  
+  stroke(0)
+  fill(40,50,95)
+  ellipse(370,150, moonSize)
+  
+  for(let i=0; i < 7; i++){
+   ellipse(370,150, moonSize+(i*15))
+   
+}
+
 
 }
 
@@ -44,10 +61,31 @@ noStroke()
 //grass
   fill (95,95,20)
   rect(x, y+35,600,10)
-  let other =map(other, x - 35, y - 10, 25, 25);
-  let colorwindow = (45,85,95)
-
 }
+  
+  //window colour chnaging
+//let otherMap =map(other, x - 35, y - 10, 25, 25);
+  
+
+  //expanding moon
+  //let
+  
+//function expandingMoon(){
+  
+  //moonsize = map(vocal,0,100,100,600)
+  
+//  ellipse(50,100, moonsize)
+  //fill(40,40,95)
+
+  
+// for (let i = 1; i < 5; i++){
+
+   //ellipse(100, 50,moonsize=(100*i))
+
+
+  ////}
+
+//}
 // need to make smoke from chimney and light in windowns 
 //cute moon in sky also 
 //and sort lyrics?
